@@ -33,3 +33,15 @@ router.post('/', (req, res) => {
 });
 
 module.exports = router;
+
+router.delete('/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const index = produtos.findIndex(prod => prod.id === id);
+
+  if (index !== -1) {
+    produtos.splice(index, 1);
+    res.status(200).json({ mensagem: 'Produto removido com sucesso.' });
+  } else {
+    res.status(404).json({ mensagem: 'Produto não encontrado.' });
+  }
+});
