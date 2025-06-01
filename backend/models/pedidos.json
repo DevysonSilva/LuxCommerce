@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1001,
+    "cliente": "João Silva",
+    "produtos": ["Camiseta", "Moletom"],
+    "total": 329.90,
+    "status": "Pendente",
+    "data": "2025-06-01T14:15:00Z"
+  }
+]

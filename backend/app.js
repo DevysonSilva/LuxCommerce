@@ -35,3 +35,6 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
+
+const pedidoRoutes = require('./routes/pedidoRoutes');
+app.use('/api/pedidos', pedidoRoutes);

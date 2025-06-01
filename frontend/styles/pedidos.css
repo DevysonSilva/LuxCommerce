@@ -1,0 +1,61 @@
+.page-title {
+  margin: 2rem 0 1rem;
+  font-size: 2rem;
+  color: #e50914;
+  text-align: center;
+}
+
+.tabela-wrapper {
+  overflow-x: auto;
+  background: #111;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.tabela-pedidos {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+  font-size: 0.95rem;
+}
+
+.tabela-pedidos th,
+.tabela-pedidos td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #333;
+  text-align: left;
+}
+
+.tabela-pedidos th {
+  background-color: #1a1a1a;
+  color: #ff3b3b;
+  font-weight: 600;
+}
+
+.tabela-pedidos tr:hover {
+  background-color: #1e1e1e;
+}
+
+.status-select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  color: white;
+  background: #444;
+  cursor: pointer;
+}
+
+.btn-acao {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-acao:hover {
+  background-color: #ff2a2a;
+}
