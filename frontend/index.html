@@ -3,72 +3,256 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="LuxCommerce - Sua loja virtual premium e responsiva, otimizada para buscas no Google." />
-  <meta name="keywords" content="ecommerce, loja virtual, produtos, LuxCommerce, comprar online" />
-  <meta name="author" content="Devyson" />
-  <title>LuxCommerce</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- SEO -->
+  <title>LuxCommerce | Sua loja de produtos exclusivos</title>
+  <meta name="description" content="Descubra ofertas exclusivas e produtos incríveis na LuxCommerce. Qualidade, estilo e entrega rápida para todo o Brasil." />
+  <meta name="keywords" content="ecommerce, loja online, produtos exclusivos, ofertas, roupas, acessórios, colecionáveis" />
+  <meta name="author" content="LuxCommerce" />
+
+  <!-- Open Graph para redes sociais -->
+  <meta property="og:title" content="LuxCommerce | Produtos que definem estilo" />
+  <meta property="og:description" content="Ofertas imperdíveis em produtos exclusivos. Acesse agora!" />
+  <meta property="og:image" content="images/og-image.jpg" />
+  <meta property="og:url" content="https://luxcommerce.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Ícones e favicons -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+  <!-- Fontes e CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-  <header class="fade-in">
-    <div class="container">
-      <h1>LuxCommerce</h1>
-      <button id="menu-toggle" class="hamburger" aria-label="Abrir menu">&#9776;</button>
-      <nav id="navbar">
-        <ul>
-          <li><a href="#">Início</a></li>
-          <li><a href="#">Produtos</a></li>
-          <li><a href="#">Contato</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <section class="hero fade-in-up">
+  <!-- Cabeçalho será injetado aqui -->
+  <header class="site-header fade-in-down" role="banner">
   <div class="container">
-    <h2>Bem-vindo à sua nova loja virtual</h2>
-    <p>Design premium, responsividade e performance. Tudo em um só lugar.</p>
-    <a href="#" class="btn">Ver produtos</a>
     
-    <h3 style="margin-top: 40px;">Produtos em destaque:</h3>
-    <ul id="produtos" aria-label="Lista de produtos em destaque"></ul>
+    <a href="/" class="logo" aria-label="LuxCommerce Home">
+      <img src="images/logo.svg" alt="Logo da LuxCommerce" />
+    </a>
+    
+    <!-- Ícone do carrinho -->
+    <a href="#carrinho" class="cart-icon" aria-label="Ver carrinho">
+      <img src="images/cart-icon.svg" alt="Carrinho de compras" />
+      <span class="cart-count" aria-hidden="true">0</span>
+    </a>
+    
+    <!-- Botão de menu responsivo -->
+    <button id="menu-toggle" class="hamburger" aria-label="Abrir Menu">&#9776;</button>
+    
+    <!-- Menu de navegação -->
+    <nav id="navbar" class="nav-menu" aria-label="Navegação Principal">
+      <ul>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#ofertas">Ofertas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
   </div>
-    </section>
-</main>
+</header>
+
+  <!-- Seções serão adicionadas abaixo -->
+  <main>
+    <section class="hero-section fade-in-down">
+  <div class="hero-content">
+    <h1 class="hero-title">Estilo que fala por você</h1>
+    <p class="hero-subtitle">Coleções oficiais e exclusivas para quem vive o universo do entretenimento.</p>
+    <a href="#produtos" class="btn-hero">Explorar Produtos</a>
+  </div>
+  <div class="hero-image-container">
+    <img src="assets/hero-banner.webp" alt="Banner de coleção Netflix oficial" class="hero-image" loading="lazy" />
+  </div>
+</section>
+  </main>
   
-  <section id="produtos-destaque" class="fade-in-up">
-  <div class="container">
-    <h2>Produtos em Destaque</h2>
-    <div class="grade-produtos" aria-label="Lista de produtos em destaque">
-      <!-- Produtos serão inseridos dinamicamente aqui via JS -->
-      <!-- Exemplo estático (pode remover depois) -->
-      <article class="produto-card">
-        <figure>
-          <img src="https://via.placeholder.com/300x300" alt="Camiseta Premium" loading="lazy">
-          <figcaption>Camiseta Premium</figcaption>
-        </figure>
-        <p class="preco">R$ 79,90</p>
-        <a href="#" class="btn">Ver detalhes</a>
-      </article>
-      
-      <article class="produto-card">
-        <figure>
-          <img src="https://via.placeholder.com/300x300" alt="Tênis Esportivo" loading="lazy">
-          <figcaption>Tênis Esportivo</figcaption>
-        </figure>
-        <p class="preco">R$ 199,90</p>
-        <a href="#" class="btn">Ver detalhes</a>
-      </article>
+  <!-- SEÇÃO DESTAQUE -->
+  
+  <section class="colecoes-section fade-in-up" id="colecoes">
+  <h2 class="section-title">Coleções em Destaque</h2>
+  <div class="colecoes-grid">
+    <div class="colecao-card">
+      <img src="assets/colecao1.webp" alt="Coleção Ação & Aventura" loading="lazy" />
+      <div class="colecao-info">
+        <h3>Ação & Aventura</h3>
+        <a href="#" class="btn-vermais">Ver Coleção</a>
+      </div>
+    </div>
+    <div class="colecao-card">
+      <img src="assets/colecao2.webp" alt="Coleção Séries Icônicas" loading="lazy" />
+      <div class="colecao-info">
+        <h3>Séries Icônicas</h3>
+        <a href="#" class="btn-vermais">Ver Coleção</a>
+      </div>
+    </div>
+    <div class="colecao-card">
+      <img src="assets/colecao3.webp" alt="Coleção Exclusiva" loading="lazy" />
+      <div class="colecao-info">
+        <h3>Exclusivos</h3>
+        <a href="#" class="btn-vermais">Ver Coleção</a>
+      </div>
     </div>
   </div>
 </section>
   
+  <!-- VITRINE -->
+  
+  <section class="vitrine-section" id="destaques">
+  <h2 class="section-title">Produtos em Destaque</h2>
+  <div class="vitrine-grid">
+    <div class="produto-card">
+      <img src="img/produto1.jpg" alt="Camiseta edição especial" />
+      <div class="produto-info">
+        <h3>Camiseta Edição Limitada</h3>
+        <p>R$129,90</p>
+        <a href="#" class="btn-comprar">Comprar</a>
+      </div>
+    </div>
+    <div class="produto-card">
+      <img src="img/produto2.jpg" alt="Action figure de personagem" />
+      <div class="produto-info">
+        <h3>Action Figure Exclusivo</h3>
+        <p>R$249,90</p>
+        <a href="#" class="btn-comprar">Comprar</a>
+      </div>
+    </div>
+    <div class="produto-card">
+      <img src="img/produto3.jpg" alt="Moletom colecionável" />
+      <div class="produto-info">
+        <h3>Moletom Colecionável</h3>
+        <p>R$199,90</p>
+        <a href="#" class="btn-comprar">Comprar</a>
+      </div>
+    </div>
+  </div>
+</section>
+  
+  <!-- CATEGORIAS -->
+  
+  <section class="colecoes-section" id="colecoes">
+  <h2 class="section-title">Explore por Coleções</h2>
+  <div class="colecoes-grid">
+    <a href="#" class="colecao-card">
+      <img src="img/colecao1.jpg" alt="Coleção Stranger Things" />
+      <div class="colecao-overlay">
+        <h3>Stranger Things</h3>
+      </div>
+    </a>
+    <a href="#" class="colecao-card">
+      <img src="img/colecao2.jpg" alt="Coleção One Piece" />
+      <div class="colecao-overlay">
+        <h3>One Piece</h3>
+      </div>
+    </a>
+    <a href="#" class="colecao-card">
+      <img src="img/colecao3.jpg" alt="Coleção Witcher" />
+      <div class="colecao-overlay">
+        <h3>The Witcher</h3>
+      </div>
+    </a>
+  </div>
+</section>
+  
+  <!-- SOBRE A MARCA -->
+<section class="sobre-section" id="sobre">
+  <div class="sobre-container">
+    <div class="sobre-texto">
+      <h2>Sobre a Nossa Loja</h2>
+      <p>
+        Inspirada pelas histórias que conquistam o mundo, nossa loja traz os produtos oficiais das franquias que você ama. Cada peça é feita para fãs de verdade – com design autêntico, qualidade premium e muito estilo.
+      </p>
+      <p>
+        Somos mais que uma loja. Somos parte da sua maratona, do seu cosplay, da sua coleção. Aqui, cada detalhe importa.
+      </p>
+    </div>
+    <div class="sobre-img">
+      <img src="img/sobre-nos.jpg" alt="Imagem representando a identidade da loja" />
+    </div>
+  </div>
+</section>
+  
+  <!-- DESTAQUES DA SEMANA -->
+<section class="destaques-section" id="destaques">
+  <h2>Destaques da Semana</h2>
+  <div class="destaques-grid">
+    <div class="produto-card">
+      <img src="img/produto1.jpg" alt="Camiseta Stranger Things">
+      <h3>Camiseta Stranger Things</h3>
+      <p>Estampa retrô da série. Tecido premium.</p>
+      <span class="preco">R$99,90</span>
+    </div>
+    <div class="produto-card">
+      <img src="img/produto2.jpg" alt="Moletom Witcher">
+      <h3>Moletom The Witcher</h3>
+      <p>Modelo unissex com capuz e forro interno.</p>
+      <span class="preco">R$159,90</span>
+    </div>
+    <div class="produto-card">
+      <img src="img/produto3.jpg" alt="Action Figure Eleven">
+      <h3>Action Figure Eleven</h3>
+      <p>Detalhes realistas da personagem.</p>
+      <span class="preco">R$189,90</span>
+    </div>
+  </div>
+</section>
+  
+  <!-- NEWSLETTER -->
+<section class="newsletter-section" id="newsletter">
+  <div class="newsletter-container">
+    <h2>Fique por dentro das novidades</h2>
+    <p>Receba ofertas exclusivas e lançamentos diretamente no seu e-mail.</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Digite seu e-mail" required>
+      <button type="submit">Assinar</button>
+    </form>
+  </div>
+</section>
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
-  <footer>
-    <p>&copy; 2025 LuxCommerce. Todos os direitos reservados.</p>
-  </footer>
+  <!-- Rodapé será inserido por último -->
+  <footer class="site-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h4>LuxCommerce</h4>
+      <p>Transformando experiências em compras.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Links úteis</h4>
+      <ul>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#ofertas">Ofertas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Redes sociais</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-credit">© 2025 LuxCommerce. Todos os direitos reservados.</p>
+</footer>
 
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="scripts/app.js"></script>
 </body>
 </html>
