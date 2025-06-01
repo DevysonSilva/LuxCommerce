@@ -84,3 +84,55 @@ exports.dadosDashboard = (req, res) => {
     pedidos: totalPedidos
   });
 };
+
+const fs = require('fs');
+const path = require('path');
+
+const produtosPath = path.join(__dirname, '../models/produtos.json');
+const pedidosPath = path.join(__dirname, '../models/pedidos.json');
+const adminsPath = path.join(__dirname, '../models/admins.json');
+
+exports.dadosDashboard = (req, res) => {
+  const produtos = fs.existsSync(produtosPath) ? JSON.parse(fs.readFileSync(produtosPath)) : [];
+  const pedidos = fs.existsSync(pedidosPath) ? JSON.parse(fs.readFileSync(pedidosPath)) : [];
+  const admins = fs.existsSync(adminsPath) ? JSON.parse(fs.readFileSync(adminsPath)) : [];
+
+  // Contadores
+  const totalProdutos = produtos.length;
+  const totalPedidos = pedidos.length;
+  const totalAdmins = admins.length;
+
+  // Agrupar por status
+  const pedidosPorStatus = {};
+  pedidos.forEach(p => {
+    const status = p.status || "Indefinido";
+    pedidosPorStatus[status] = (pedidosPorStatus[status] || 0) + 1;
+  });
+
+  // Agrupar por mês (usando data ou gerando aleatórios simulados)
+  const pedidosPorMes = {};
+  const meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+
+  pedidos.forEach(p => {
+    let dataPedido;
+    if (p.data) {
+      dataPedido = new Date(p.data);
+    } else {
+      // Simula uma data aleatória nos últimos 6 meses
+      const mesSimulado = Math.floor(Math.random() * 6);
+      dataPedido = new Date();
+      dataPedido.setMonth(dataPedido.getMonth() - mesSimulado);
+    }
+
+    const mesNome = meses[dataPedido.getMonth()];
+    pedidosPorMes[mesNome] = (pedidosPorMes[mesNome] || 0) + 1;
+  });
+
+  return res.json({
+    totalProdutos,
+    totalPedidos,
+    totalAdmins,
+    pedidosPorStatus,
+    pedidosPorMes
+  });
+};

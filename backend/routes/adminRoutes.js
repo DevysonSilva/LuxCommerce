@@ -73,4 +73,6 @@ router.delete("/:id", (req, res) => {
   res.json({ mensagem: "Administrador removido com sucesso." });
 });
 
+router.get('/dashboard', adminController.dadosDashboard);
+
 module.exports = router;

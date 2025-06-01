@@ -29,6 +29,19 @@
 
   <!-- Conteúdo principal -->
   <main class="dashboard-main">
+    <h2 class="page-title">📊 Painel Administrativo</h2>
+
+<section class="resumo-cards">
+  <div class="resumo-card" id="total-produtos">Produtos: 0</div>
+  <div class="resumo-card" id="total-pedidos">Pedidos: 0</div>
+  <div class="resumo-card" id="total-admins">Admins: 0</div>
+</section>
+
+<section class="graficos-section">
+  <canvas id="grafico-status"></canvas>
+  <canvas id="grafico-mensal"></canvas>
+</section>
+
     <h2 class="page-title">Resumo do Sistema</h2>
     <div class="cards-container">
       <div class="card">
@@ -47,6 +60,7 @@
   </main>
 
   <script src="../scripts/dashboard.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="../scripts/menu.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
