@@ -56,3 +56,38 @@ exports.loginAdmin = (req, res) => {
     nome: admin.nome
   });
 };
+
+const path = require("path");
+const fs = require("fs");
+
+const produtosPath = path.join(__dirname, "../models/produtos.json");
+const adminsPath = path.join(__dirname, "../models/admins.json");
+// Em breve: pedidos.json
+
+exports.dadosDashboard = (req, res) => {
+  let totalProdutos = 0;
+  let totalAdmins = 0;
+  let totalPedidos = 0; // pode ser fixo por enquanto
+
+  try {
+    const produtos = JSON.parse(fs.readFileSync(produtosPath, "utf-8"));
+    totalProdutos = produtos.length;
+  } catch (err) {
+    console.warn("⚠️ Não foi possível ler produtos.json");
+  }
+
+  try {
+    const admins = JSON.parse(fs.readFileSync(adminsPath, "utf-8"));
+    totalAdmins = admins.length;
+  } catch (err) {
+    console.warn("⚠️ Não foi possível ler admins.json");
+  }
+
+  // Pode adicionar leitura de pedidos futuramente
+
+  res.json({
+    produtos: totalProdutos,
+    admins: totalAdmins,
+    pedidos: totalPedidos
+  });
+};
