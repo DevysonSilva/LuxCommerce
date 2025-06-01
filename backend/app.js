@@ -38,3 +38,7 @@ app.listen(PORT, () => {
 
 const pedidoRoutes = require('./routes/pedidoRoutes');
 app.use('/api/pedidos', pedidoRoutes);
+
+
+const adminRoutes = require('./routes/adminRoutes');
+app.use('/api/admins', adminRoutes);
