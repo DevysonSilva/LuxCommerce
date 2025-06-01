@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | ADM LuxCommerce</title>
+  <link rel="stylesheet" href="../styles/dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Header fixo -->
+  <header class="dashboard-header">
+    <div class="container">
+      <h1 class="logo">LuxCommerce ADM</h1>
+      <button id="logout-btn" class="logout-btn">Sair</button>
+    </div>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main class="dashboard-main">
+    <h2 class="page-title">Resumo do Sistema</h2>
+    <div class="cards-container">
+      <div class="card">
+        <h3>Total de Produtos</h3>
+        <p id="produtos-count">--</p>
+      </div>
+      <div class="card">
+        <h3>Total de Usuários</h3>
+        <p id="usuarios-count">--</p>
+      </div>
+      <div class="card">
+        <h3>Pedidos Realizados</h3>
+        <p id="pedidos-count">--</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="../scripts/dashboard.js"></script>
+</body>
+</html>

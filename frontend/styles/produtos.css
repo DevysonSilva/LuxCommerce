@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0a0a0a;
+  color: #fff;
+}
+
+/* Header */
+.dashboard-header {
+  background: #111;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.dashboard-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #e50914;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logout-btn {
+  background: #e50914;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #ff2a2a;
+}
+
+/* Conteúdo */
+.produtos-main {
+  padding: 2rem;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.produtos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Cartão de produto */
+.produto-card {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.produto-card:hover {
+  transform: scale(1.03);
+}
+
+.produto-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.produto-card p {
+  color: #ff5050;
+  margin-bottom: 1rem;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card-actions button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-editar {
+  background-color: #1e90ff;
+  color: white;
+}
+
+.btn-editar:hover {
+  background-color: #1570c0;
+}
+
+.btn-excluir {
+  background-color: #ff4444;
+  color: white;
+}
+
+.btn-excluir:hover {
+  background-color: #c92a2a;
+}
