@@ -5,16 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard | ADM LuxCommerce</title>
   <link rel="stylesheet" href="../styles/dashboard.css" />
+  <link rel="stylesheet" href="../styles/menu.css" type="text/css" media="all" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
   <!-- Header fixo -->
-  <header class="dashboard-header">
-    <div class="container">
-      <h1 class="logo">LuxCommerce ADM</h1>
-      <button id="logout-btn" class="logout-btn">Sair</button>
-    </div>
-  </header>
+  <!-- HEADER REUTILIZÁVEL -->
+<header class="site-header">
+  <div class="container">
+    <a href="dashboard.html" class="logo">LuxCommerce</a>
+    <button id="menu-toggle" class="hamburger" aria-label="Abrir menu">&#9776;</button>
+    <nav>
+      <ul class="nav-menu" id="nav">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="pedidos.html">Pedidos</a></li>
+        <li><a href="admins.html">Administradores</a></li>
+        <li><a href="#" id="logout-btn">Sair</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
   <!-- Conteúdo principal -->
   <main class="dashboard-main">
@@ -36,5 +47,6 @@
   </main>
 
   <script src="../scripts/dashboard.js"></script>
+  <script src="../scripts/menu.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

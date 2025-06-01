@@ -1,0 +1,78 @@
+/* MENU FIXO RESPONSIVO */
+.site-header {
+  background-color: var(--dark, #0a0a0a);
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--primary, #e50914);
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--primary, #e50914);
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    flex-direction: column;
+    background-color: #111;
+    width: 100%;
+    text-align: center;
+    display: none;
+    padding: 1rem 0;
+    border-top: 1px solid #333;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+}
