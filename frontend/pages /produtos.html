@@ -17,10 +17,37 @@
 
   <main class="produtos-main">
     <h2 class="page-title">Produtos Cadastrados</h2>
+    <!-- Formulário de novo produto -->
+<section class="novo-produto-section">
+  <h3>Cadastrar Novo Produto</h3>
+  <form id="form-novo-produto">
+    <input type="text" id="nome-produto" placeholder="Nome do produto" required />
+    <input type="number" id="preco-produto" placeholder="Preço (R$)" required step="0.01" />
+    <button type="submit" class="btn-adicionar">Adicionar</button>
+  </form>
+  <p id="status-msg" class="status-msg"></p>
+</section>
     <div id="produtos-lista" class="produtos-container">
       <!-- Produtos serão injetados aqui -->
     </div>
   </main>
+  
+  <!-- Modal de Edição -->
+<div id="modal-editar" class="modal-overlay hidden">
+  <div class="modal-content">
+    <h3>Editar Produto</h3>
+    <form id="form-editar-produto">
+      <input type="text" id="edit-nome" placeholder="Nome do produto" required />
+      <input type="number" id="edit-preco" placeholder="Preço" step="0.01" required />
+      <div class="modal-actions">
+        <button type="submit" class="btn-confirmar">Salvar</button>
+        <button type="button" class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
 
   <script src="../scripts/produtos.js"></script>
 </body>
