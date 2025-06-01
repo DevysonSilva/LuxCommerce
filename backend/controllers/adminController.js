@@ -2,6 +2,8 @@ const fs = require("fs");
 const path = require("path");
 
 const adminPath = path.join(__dirname, "../models/admins.json");
+const produtosPath = path.join(__dirname, "../models/produtos.json");
+// const pedidosPath = path.join(__dirname, "../models/pedidos.json"); // futuro
 
 function lerAdmins() {
   const data = fs.readFileSync(adminPath, "utf-8");
@@ -57,17 +59,10 @@ exports.loginAdmin = (req, res) => {
   });
 };
 
-const path = require("path");
-const fs = require("fs");
-
-const produtosPath = path.join(__dirname, "../models/produtos.json");
-const adminsPath = path.join(__dirname, "../models/admins.json");
-// Em breve: pedidos.json
-
 exports.dadosDashboard = (req, res) => {
   let totalProdutos = 0;
   let totalAdmins = 0;
-  let totalPedidos = 0; // pode ser fixo por enquanto
+  let totalPedidos = 0; // Pode ser fixo por enquanto
 
   try {
     const produtos = JSON.parse(fs.readFileSync(produtosPath, "utf-8"));
@@ -77,13 +72,11 @@ exports.dadosDashboard = (req, res) => {
   }
 
   try {
-    const admins = JSON.parse(fs.readFileSync(adminsPath, "utf-8"));
+    const admins = JSON.parse(fs.readFileSync(adminPath, "utf-8"));
     totalAdmins = admins.length;
   } catch (err) {
     console.warn("⚠️ Não foi possível ler admins.json");
   }
-
-  // Pode adicionar leitura de pedidos futuramente
 
   res.json({
     produtos: totalProdutos,
