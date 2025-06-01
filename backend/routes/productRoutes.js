@@ -1,47 +1,59 @@
 const express = require('express');
 const router = express.Router();
+const fs = require('fs');
+const path = require('path');
 
-// Produtos de exemplo
-let produtos = [
-  { id: 1, nome: 'Camiseta Premium', preco: 79.90 },
-  { id: 2, nome: 'Tênis Esportivo', preco: 199.90 }
-];
+const produtosPath = path.join(__dirname, '../models/produtos.json');
 
-// @route   GET /api/products
-// @desc    Listar todos os produtos
+function getProdutos() {
+  const data = fs.readFileSync(produtosPath, 'utf-8');
+  return JSON.parse(data);
+}
+
+function salvarProdutos(produtos) {
+  fs.writeFileSync(produtosPath, JSON.stringify(produtos, null, 2), 'utf-8');
+}
+
+// GET - listar todos
 router.get('/', (req, res) => {
+  const produtos = getProdutos();
   res.json(produtos);
 });
 
-// @route   POST /api/products
-// @desc    Adicionar novo produto
+// POST - adicionar
 router.post('/', (req, res) => {
   const { nome, preco } = req.body;
-  
-  if (!nome || !preco) {
+  if (!nome || preco == null) {
     return res.status(400).json({ mensagem: 'Nome e preço são obrigatórios.' });
   }
   
+  const produtos = getProdutos();
   const novoProduto = {
-    id: produtos.length + 1,
+    id: Date.now(),
     nome,
     preco
   };
   
   produtos.push(novoProduto);
+  salvarProdutos(produtos);
+  
   res.status(201).json(novoProduto);
 });
 
-module.exports = router;
-
+// DELETE - remover
 router.delete('/:id', (req, res) => {
   const id = parseInt(req.params.id);
-  const index = produtos.findIndex(prod => prod.id === id);
-
-  if (index !== -1) {
-    produtos.splice(index, 1);
-    res.status(200).json({ mensagem: 'Produto removido com sucesso.' });
-  } else {
-    res.status(404).json({ mensagem: 'Produto não encontrado.' });
+  let produtos = getProdutos();
+  const existe = produtos.find(p => p.id === id);
+  
+  if (!existe) {
+    return res.status(404).json({ mensagem: 'Produto não encontrado.' });
   }
+  
+  produtos = produtos.filter(p => p.id !== id);
+  salvarProdutos(produtos);
+  
+  res.json({ mensagem: 'Produto removido com sucesso.' });
 });
+
+module.exports = router;
