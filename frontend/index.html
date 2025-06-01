@@ -26,29 +26,43 @@
 
   <main>
     <section class="hero fade-in-up">
-      <h2>Bem-vindo à sua nova loja virtual</h2>
-      <p>Design premium, responsividade e performance. Tudo em um só lugar.</p>
-      <a href="#" class="btn">Ver produtos</a>
+  <div class="container">
+    <h2>Bem-vindo à sua nova loja virtual</h2>
+    <p>Design premium, responsividade e performance. Tudo em um só lugar.</p>
+    <a href="#" class="btn">Ver produtos</a>
+    
+    <h3 style="margin-top: 40px;">Produtos em destaque:</h3>
+    <ul id="produtos" aria-label="Lista de produtos em destaque"></ul>
+  </div>
     </section>
-  </main>
+</main>
   
-  <section class="hero fade-in-up">
-  <h2>Bem-vindo à sua nova loja virtual</h2>
-  <p>Design premium, responsividade e performance. Tudo em um só lugar.</p>
-  <a href="#" class="btn">Ver produtos</a>
-
-  <h3 style="margin-top: 30px;">Produtos em destaque:</h3>
-  <ul id="produtos"></ul>
+  <section id="produtos-destaque" class="fade-in-up">
+  <div class="container">
+    <h2>Produtos em Destaque</h2>
+    <div class="grade-produtos" aria-label="Lista de produtos em destaque">
+      <!-- Produtos serão inseridos dinamicamente aqui via JS -->
+      <!-- Exemplo estático (pode remover depois) -->
+      <article class="produto-card">
+        <figure>
+          <img src="https://via.placeholder.com/300x300" alt="Camiseta Premium" loading="lazy">
+          <figcaption>Camiseta Premium</figcaption>
+        </figure>
+        <p class="preco">R$ 79,90</p>
+        <a href="#" class="btn">Ver detalhes</a>
+      </article>
+      
+      <article class="produto-card">
+        <figure>
+          <img src="https://via.placeholder.com/300x300" alt="Tênis Esportivo" loading="lazy">
+          <figcaption>Tênis Esportivo</figcaption>
+        </figure>
+        <p class="preco">R$ 199,90</p>
+        <a href="#" class="btn">Ver detalhes</a>
+      </article>
+    </div>
+  </div>
 </section>
-  
-  <h3>Adicionar novo produto</h3>
-<form id="produto-form">
-  <input type="text" id="nome" placeholder="Nome do produto" required />
-  <input type="number" id="preco" placeholder="Preço" step="0.01" required />
-  <button type="submit" class="btn">Adicionar</button>
-</form>
-<p id="mensagem-status" style="margin-top:10px;"></p>
-  
   
 
   <footer>
