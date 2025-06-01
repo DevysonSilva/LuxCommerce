@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "nome": "Camisa Lux",
+    "descricao": "Camisa de algodão premium",
+    "preco": 99.90,
+    "imagem": "camisa-lux.jpg"
+  },
+  {
+    "id": 2,
+    "nome": "Tênis Elite",
+    "descricao": "Conforto e estilo para o dia a dia",
+    "preco": 249.90,
+    "imagem": "tenis-elite.jpg"
+  }
+]
