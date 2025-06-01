@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LuxCommerce | Administradores</title>
+  <link rel="stylesheet" href="../styles/menu.css" />
+  <link rel="stylesheet" href="../styles/admins.css" />
+</head>
+<body>
+  <!-- Menu global -->
+  <header class="site-header">
+    <div class="container">
+      <a href="dashboard.html" class="logo">LuxCommerce</a>
+      <button id="menu-toggle" class="hamburger" aria-label="Abrir menu">&#9776;</button>
+      <nav>
+        <ul class="nav-menu" id="nav">
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="pedidos.html">Pedidos</a></li>
+          <li><a href="admins.html">Administradores</a></li>
+          <li><a href="#" id="logout-btn">Sair</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 class="page-title">👑 Administradores</h2>
+
+    <!-- Formulário de novo administrador -->
+    <form id="form-novo-admin" class="admin-form">
+      <input type="email" id="email-admin" placeholder="E-mail do novo admin" required />
+      <input type="password" id="senha-admin" placeholder="Senha" required />
+      <button type="submit">Cadastrar</button>
+      <span id="admin-msg" class="status-msg"></span>
+    </form>
+
+    <!-- Lista de administradores -->
+    <div class="admin-lista-wrapper">
+      <table class="admin-tabela">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>E-mail</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody id="lista-admins">
+          <!-- Conteúdo injetado por JS -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="../scripts/menu.js"></script>
+  <script src="../scripts/admins.js"></script>
+</body>
+</html>

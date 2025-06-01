@@ -1,0 +1,88 @@
+.page-title {
+  margin: 2rem 0 1rem;
+  font-size: 2rem;
+  color: #e50914;
+  text-align: center;
+}
+
+.admin-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.admin-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  min-width: 220px;
+  font-size: 1rem;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.admin-form button {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.admin-form button:hover {
+  background-color: #ff2a2a;
+}
+
+.status-msg {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #ffcc00;
+}
+
+.admin-lista-wrapper {
+  overflow-x: auto;
+  background: #111;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.admin-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+}
+
+.admin-tabela th,
+.admin-tabela td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #333;
+  text-align: left;
+}
+
+.admin-tabela th {
+  background-color: #1a1a1a;
+  color: #e50914;
+}
+
+.btn-remover {
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-remover:hover {
+  background-color: #c92a2a;
+}
